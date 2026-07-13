@@ -172,19 +172,22 @@ h2 {
   white-space: nowrap;
 }
 
-.hero-dock {
+.section-dock {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   bottom: 0;
   left: 50%;
   width: min(780px, 96vw);
   aspect-ratio: 3 / 2;
   pointer-events: none;
   transform: translate(-50%, 35%);
+}
+
+.section-dock--animated {
   animation: dockSlideUp 1.5s cubic-bezier(0.2, 0.88, 0.28, 1.12) both 1.25s;
 }
 
-.hero-dock__image {
+.section-dock__image {
   display: block;
   width: 100%;
   height: 100%;
@@ -192,7 +195,7 @@ h2 {
   user-select: none;
 }
 
-.hero-dock__notification {
+.section-dock__notification {
   position: absolute;
   top: 38.2%;
   left: 74.8%;
@@ -257,8 +260,8 @@ h2 {
 
 .browser-window--profile {
   z-index: 2;
-  top: 5.5%;
-  left: 47%;
+  top: 4%;
+  left: 50%;
   width: min(19.5vw, 400px);
   aspect-ratio: 912 / 1170;
 }
@@ -267,7 +270,7 @@ h2 {
   z-index: 3;
   top: 26%;
   left: 21%;
-  width: min(32vw, 650px);
+  width: min(38.4vw, 780px);
   aspect-ratio: 948 / 931;
 }
 
@@ -316,6 +319,14 @@ h2 {
   white-space: nowrap;
 }
 
+.browser-window__selection {
+  display: inline-block;
+  padding: 0.04em 0.12em 0.06em;
+  color: #ffbcd8;
+  background: #02031f;
+  box-shadow: 0 0 0 1px #02031f;
+}
+
 .browser-window__content--profile {
   display: flex;
   align-items: center;
@@ -344,12 +355,11 @@ h2 {
 
 .browser-window__content--timeline .browser-window__title {
   margin-bottom: 5%;
-  font-size: clamp(16px, 1.75vw, 34px);
+  font-size: clamp(18px, 2vw, 40px);
 }
 
 .timeline-section--visible .browser-window {
-  animation: browserWindowAppear 0.75s cubic-bezier(0.2, 0.78, 0.2, 1)
-    forwards;
+  animation: browserWindowAppear 0.75s cubic-bezier(0.2, 0.78, 0.2, 1) forwards;
 }
 
 .timeline-section--visible .browser-window--who {
@@ -378,7 +388,7 @@ h2 {
   position: absolute;
   top: 0.72em;
   bottom: 0.72em;
-  left: 0.36em;
+  left: 0.06em;
   width: 2px;
   background: currentColor;
   transform: scaleY(0);
@@ -394,9 +404,9 @@ h2 {
   display: grid;
   grid-template-columns: minmax(7.4em, max-content) minmax(0, 1fr);
   column-gap: clamp(7px, 1vw, 18px);
-  margin-bottom: 1em;
-  font-size: clamp(9px, 0.92vw, 17px);
-  line-height: 1.2;
+  margin-bottom: 1.4em;
+  font-size: clamp(12px, 1.28vw, 22px);
+  line-height: 1.25;
   word-break: keep-all;
 }
 
@@ -446,7 +456,7 @@ h2 {
   grid-column: 1;
   min-width: 0;
   padding-top: 0.12em;
-  font-size: clamp(8px, 0.72vw, 13px);
+  font-size: clamp(10px, 0.98vw, 17px);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -467,6 +477,48 @@ h2 {
 
 .timeline__description {
   margin-top: 0.2em;
+}
+
+.timeline-award {
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  margin: 6% 0 0 1.1em;
+  padding-top: 4%;
+  border-top: 1px solid rgba(2, 3, 31, 0.2);
+  color: #02031f;
+  font-size: clamp(12px, 1.28vw, 22px);
+  font-weight: 800;
+  line-height: 1.25;
+  opacity: 0;
+  word-break: keep-all;
+}
+
+.timeline-award__icon {
+  flex: 0 0 auto;
+  font-size: 1.2em;
+  line-height: 1;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
+}
+
+.timeline-award__body,
+.timeline-award__description {
+  display: block;
+}
+
+.timeline-award__body {
+  min-width: 0;
+}
+
+.timeline-award__description {
+  margin-top: 0.3em;
+  font-size: 0.82em;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.timeline-section--visible .timeline-award {
+  animation: timelineAppear 0.6s ease forwards 1.2s;
 }
 
 .timeline-section--visible .timeline time,
@@ -577,7 +629,7 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-dock {
+  .section-dock--animated {
     animation: none;
   }
 }
@@ -615,11 +667,11 @@ h2 {
     font-size: clamp(18px, 5.5vw, 25px);
   }
 
-  .hero-dock {
+  .section-dock {
     width: min(620px, 112vw);
   }
 
-  .hero-dock__notification {
+  .section-dock__notification {
     border-width: 1.5px;
   }
 
@@ -651,8 +703,8 @@ h2 {
 
   .browser-window--timeline {
     top: 36%;
-    left: 9%;
-    width: 82vw;
+    left: 1%;
+    width: 98vw;
   }
 
   .browser-window__content--who .browser-window__title {
@@ -665,7 +717,7 @@ h2 {
 
   .browser-window__content--timeline .browser-window__title {
     margin-bottom: 4%;
-    font-size: clamp(13px, 4.5vw, 20px);
+    font-size: clamp(15px, 5vw, 22px);
   }
 
   .timeline {
@@ -676,19 +728,25 @@ h2 {
   .timeline li {
     grid-template-columns: minmax(5.7em, max-content) minmax(0, 1fr);
     column-gap: 5px;
-    margin-bottom: 0.7em;
-    font-size: clamp(7px, 2.25vw, 10px);
+    margin-bottom: 0.9em;
+    font-size: clamp(9px, 2.8vw, 13px);
     word-break: normal;
     overflow-wrap: anywhere;
   }
 
   .timeline time {
-    font-size: clamp(6px, 1.8vw, 8px);
+    font-size: clamp(7px, 2.2vw, 10px);
     white-space: normal;
   }
 
   .timeline__description {
     margin-top: 0.12em;
+  }
+
+  .timeline-award {
+    margin-top: 5%;
+    padding-top: 3.5%;
+    font-size: clamp(9px, 2.8vw, 13px);
   }
 }
 
@@ -705,7 +763,8 @@ h2 {
   .timeline::before,
   .timeline li::before,
   .timeline time,
-  .timeline__content {
+  .timeline__content,
+  .timeline-award {
     opacity: 1;
     transform: none;
   }
