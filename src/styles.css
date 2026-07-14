@@ -859,6 +859,195 @@ h2 {
   animation-delay: 0.5s;
 }
 
+.career-section {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.career-browser {
+  position: absolute;
+  filter: drop-shadow(0 22px 32px rgba(12, 38, 75, 0.2));
+  opacity: 0;
+  transform: translate(-10%, 9%);
+}
+
+.career-browser--title {
+  z-index: 2;
+  top: 6.5%;
+  left: calc(50% - min(16.25vw, 332.5px));
+  width: min(32.5vw, 665px);
+  aspect-ratio: 1284 / 780;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.career-browser__frame {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.career-browser__content {
+  position: absolute;
+  z-index: 1;
+  top: 13.5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  color: #02031f;
+}
+
+.career-browser__content--title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 6% 8%;
+  text-align: center;
+}
+
+.career-browser__eyebrow {
+  margin-bottom: 0.7em;
+  font-family: "Aggravo", "NanumSquare", sans-serif;
+  font-size: clamp(9px, 0.82vw, 15px);
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.58;
+}
+
+.career-browser__content--title h2 {
+  margin: 0;
+  font-family: "Aggravo", "NanumSquare", sans-serif;
+  font-size: clamp(17px, 1.8vw, 35px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.career-browser__content--title p {
+  margin: 0.7em 0 0;
+  font-size: clamp(12px, 1.1vw, 20px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.career-browser__content--title strong {
+  margin-top: 0.45em;
+  font-size: clamp(11px, 0.95vw, 18px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.career-card-list {
+  position: absolute;
+  z-index: 3;
+  top: 34%;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: min(6.5vw, 133px);
+}
+
+.career-card {
+  position: relative;
+  top: auto;
+  left: auto;
+  flex: 0 0 min(21vw, 430px);
+  width: min(21vw, 430px);
+  aspect-ratio: 912 / 1170;
+}
+
+.career-card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 8% 8.5% 8%;
+  overflow-y: auto;
+  scrollbar-color: rgba(2, 3, 31, 0.28) transparent;
+  scrollbar-width: thin;
+}
+
+.career-card__number {
+  align-self: flex-start;
+  padding: 0.32em 0.55em 0.24em;
+  border: 1px solid rgba(2, 3, 31, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 188, 216, 0.58);
+  font-family: "Aggravo", "NanumSquare", sans-serif;
+  font-size: clamp(8px, 0.65vw, 13px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.career-card h3 {
+  margin: 0.75em 0 0;
+  font-family: "Aggravo", "NanumSquare", sans-serif;
+  font-size: clamp(15px, 1.45vw, 28px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.career-card ul {
+  display: grid;
+  gap: 0.42em;
+  margin: 1.1em 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: clamp(9px, 0.84vw, 15.5px);
+  font-weight: 500;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.career-card li {
+  position: relative;
+  padding-left: 0.9em;
+}
+
+.career-card li::before {
+  content: "";
+  position: absolute;
+  top: 0.58em;
+  left: 0;
+  width: 0.34em;
+  height: 0.34em;
+  border-radius: 50%;
+  background: #02031f;
+}
+
+.career-section--visible .career-browser {
+  animation: browserWindowAppear 0.75s cubic-bezier(0.2, 0.78, 0.2, 1) forwards;
+}
+
+.career-section--visible .career-browser--title {
+  animation: foundImageGrow 0.68s cubic-bezier(0.16, 0.82, 0.22, 1.08) forwards;
+  animation-delay: 0s;
+}
+
+.career-section--visible .career-card--1 {
+  animation-delay: 1.36s;
+}
+
+.career-section--visible .career-card--2 {
+  animation-delay: 1.18s;
+}
+
+.career-section--visible .career-card--3 {
+  animation-delay: 1s;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1117,6 +1306,69 @@ h2 {
     left: 3%;
     width: 42vw;
   }
+
+  .career-browser--title {
+    top: 5%;
+    left: 12%;
+    width: 76vw;
+  }
+
+  .career-browser__eyebrow {
+    font-size: clamp(8px, 2.3vw, 11px);
+  }
+
+  .career-browser__content--title h2 {
+    font-size: clamp(13px, 4vw, 19px);
+  }
+
+  .career-browser__content--title p {
+    font-size: clamp(10px, 3vw, 13px);
+  }
+
+  .career-browser__content--title strong {
+    font-size: clamp(9px, 2.6vw, 12px);
+  }
+
+  .career-card-list {
+    top: 31.5%;
+    display: grid;
+    grid-template-columns: repeat(2, 44vw);
+    gap: 2.5vh 6vw;
+    justify-content: center;
+  }
+
+  .career-card {
+    top: auto;
+    left: auto;
+    width: 44vw;
+    flex-basis: auto;
+  }
+
+  .career-card--3 {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .career-card__content {
+    padding: 7% 8% 8%;
+  }
+
+  .career-card__number {
+    font-size: clamp(7px, 1.9vw, 9px);
+  }
+
+  .career-card h3 {
+    margin-top: 0.62em;
+    font-size: clamp(10px, 3vw, 13px);
+  }
+
+  .career-card ul {
+    gap: 0.32em;
+    margin-top: 0.65em;
+    font-size: clamp(9px, 0.84vw, 15.5px);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1133,7 +1385,8 @@ h2 {
   .timeline li::before,
   .timeline time,
   .timeline__content,
-  .timeline-award {
+  .timeline-award,
+  .career-browser {
     opacity: 1;
     transform: none;
   }
