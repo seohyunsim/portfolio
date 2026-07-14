@@ -1,5 +1,22 @@
+import { Icon } from "@iconify/react";
 import { useEffect, useState, type RefObject } from "react";
 import SectionDock from "./SectionDock";
+import Tooltip from "./Tooltip";
+
+const representativeTechStack = [
+  { name: "TypeScript", icon: "logos:typescript-icon" },
+  { name: "React", icon: "logos:react" },
+  { name: "Next.js", icon: "skill-icons:nextjs-light" },
+  { name: "Turborepo", icon: "logos:turborepo-icon" },
+  { name: "React Query", icon: "logos:react-query-icon" },
+  {
+    name: "React Hook Form",
+    icon: "simple-icons:reacthookform",
+    color: "#ec5990",
+  },
+  { name: "Emotion", icon: "skill-icons:emotion-light" },
+  { name: "Storybook", icon: "logos:storybook-icon" },
+] as const;
 
 const timeline = [
   {
@@ -107,6 +124,9 @@ function Info({ sectionRef }: InfoProps) {
             draggable="false"
           />
           <div className="browser-window__content browser-window__content--timeline">
+            <p className="timeline__headline">
+              심서현 | 4년차 프론트엔드 개발자
+            </p>
             <ul className="timeline" aria-label="경력 타임라인">
               {timeline.map((item) => (
                 <li key={`${item.company}-${item.period}`}>
@@ -131,8 +151,42 @@ function Info({ sectionRef }: InfoProps) {
             </div>
           </div>
         </article>
+
+        <article className="browser-window browser-window--tech-stack">
+          <img
+            className="browser-window__frame"
+            src="/image/browser_3x2_v2.png"
+            alt=""
+            width="1284"
+            height="780"
+            draggable="false"
+          />
+          <div className="browser-window__content browser-window__content--tech-stack">
+            <h2 className="browser-window__title">CORE STACK</h2>
+            <ul
+              className="found-tech-stack info-tech-stack"
+              aria-label="대표 기술 스택"
+            >
+              {representativeTechStack.map((technology) => (
+                <li className="found-tech-stack__item" key={technology.name}>
+                  <Tooltip label={technology.name}>
+                    <Icon
+                      className="found-tech-stack__icon"
+                      icon={technology.icon}
+                      style={
+                        "color" in technology
+                          ? { color: technology.color }
+                          : undefined
+                      }
+                      aria-hidden="true"
+                    />
+                  </Tooltip>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
       </div>
-      <SectionDock />
     </section>
   );
 }

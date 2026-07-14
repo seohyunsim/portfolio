@@ -1,6 +1,6 @@
 export const personalBodyProject = {
   title: "PERSONAL BODY(퍼스널바디)",
-  role: "창업, 기획 · 디자인 · 개발 전반 책임, UI/UX/FE Engineer",
+  role: "기획 · 디자인 · 개발 전반 책임, UI/UX/FE Engineer",
   techStack: [
     { name: "Turborepo", icon: "logos:turborepo-icon" },
     { name: "TypeScript", icon: "logos:typescript-icon" },
@@ -14,7 +14,7 @@ export const personalBodyProject = {
       icon: "simple-icons:reacthookform",
       color: "#ec5990",
     },
-    { name: "Emotion", icon: "ri:emotion-fill", color: "#c43bad" },
+    { name: "Emotion", icon: "skill-icons:emotion-light" },
     { name: "Axios", icon: "logos:axios" },
     { name: "Storybook", icon: "logos:storybook-icon" },
   ],

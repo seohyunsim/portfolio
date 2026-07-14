@@ -47,7 +47,7 @@ function Career() {
           draggable="false"
         />
         <div className="career-browser__content career-browser__content--title">
-          <span className="career-browser__eyebrow">CAREER</span>
+          <span className="career-browser__eyebrow">경력</span>
           <h2>{careerSummary.company}</h2>
           <p>{careerSummary.period}</p>
           <strong>{careerSummary.role}</strong>
@@ -82,8 +82,6 @@ function Career() {
           </article>
         ))}
       </div>
-
-      <SectionDock />
     </section>
   );
 }

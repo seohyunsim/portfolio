@@ -3,12 +3,15 @@ import type { Swiper as SwiperInstance } from "swiper";
 import { Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Career from "./components/Career";
+import CareerProject01 from "./components/CareerProject01";
+import CareerProject02 from "./components/CareerProject02";
+import CareerProject03 from "./components/CareerProject03";
 import Found from "./components/Found";
 import Info from "./components/Info";
 import Landing from "./components/Landing";
 
 const ACTIVE_SECTION_STORAGE_KEY = "portfolio-active-section";
-const SECTION_COUNT = 4;
+const SECTION_COUNT = 7;
 
 function getStoredSectionIndex() {
   try {
@@ -105,6 +108,15 @@ function App() {
         </SwiperSlide>
         <SwiperSlide className="portfolio__slide">
           <Career />
+        </SwiperSlide>
+        <SwiperSlide className="portfolio__slide">
+          <CareerProject01 />
+        </SwiperSlide>
+        <SwiperSlide className="portfolio__slide">
+          <CareerProject02 />
+        </SwiperSlide>
+        <SwiperSlide className="portfolio__slide">
+          <CareerProject03 />
         </SwiperSlide>
       </Swiper>
     </main>

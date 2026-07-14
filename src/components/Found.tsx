@@ -49,6 +49,7 @@ function Found() {
           draggable="false"
         />
         <div className="found-browser__content found-browser__content--summary">
+          <span className="career-browser__eyebrow">창업</span>
           <h2>{personalBodyProject.title}</h2>
           <p>{personalBodyProject.role}</p>
           <ul className="found-tech-stack" aria-label="기술 스택">

@@ -14,7 +14,7 @@ export const careerCards = [
     ],
   },
   {
-    title: "사내 자체 백오피스 플랫폼 개발",
+    title: "사내 백오피스 플랫폼 개발",
     points: [
       "5개 서비스를 단일 플랫폼으로 통합하기 위한 백오피스 프론트엔드와 공통 UI/API 구조를 고도화했습니다.",
       "Turborepo 모노레포 환경을 구축하고 공용 컴포넌트·훅·유틸리티를 패키지 단위로 관리했습니다.",
@@ -24,7 +24,7 @@ export const careerCards = [
   {
     title: "사내외 프로젝트 참여",
     points: [
-      "PRETCOORD 멤버십 어드민, Amazon Alexa Kinetic Typography prototype, Kampers Teaser, AI 모션 캡처 데이터 뷰어에 참여했습니다.",
+      "Amazon Alexa Kinetic Typography prototype, Kampers Teaser, AI 모션 캡처 데이터 뷰어 등 다양한 프로젝트 개발에 참여했습니다.",
       "인증, 다국어, 인터랙티브 UI, 성능 최적화, 협업 프로세스 개선까지 프로젝트별 문제 해결에 집중했습니다.",
       "QA 이슈 91건 → 22건, FPS 8 → 60 안정화, 커스텀 작업 시간 약 85% 단축에 기여했습니다.",
     ],
