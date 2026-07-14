@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import ScrollToTop from "react-scroll-to-top";
 
 type CopiedContact = "phone" | "email" | null;
+
+type ContactProps = {
+  onNavigateToTop: () => void;
+};
 
 async function writeToClipboard(value: string) {
   if (navigator.clipboard?.writeText) {
@@ -22,7 +27,7 @@ async function writeToClipboard(value: string) {
   textarea.remove();
 }
 
-function Contact() {
+function Contact({ onNavigateToTop }: ContactProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const copyTimerRef = useRef<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -189,6 +194,18 @@ function Contact() {
           aria-label="GitHub 새 창에서 열기"
         />
       </footer>
+
+      <ScrollToTop
+        className="contact-top-button"
+        top={-1}
+        component={
+          <span className="contact-top-button__content">
+            <span aria-hidden="true">↑</span>
+            <span>Top</span>
+          </span>
+        }
+        onClick={onNavigateToTop}
+      />
     </section>
   );
 }

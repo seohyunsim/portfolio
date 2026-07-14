@@ -44,6 +44,7 @@ function App() {
   const infoRef = useRef<HTMLElement | null>(null);
   const swiperRef = useRef<SwiperInstance | null>(null);
   const initialSectionRef = useRef(getStoredSectionIndex());
+  const isLandingUnlockedRef = useRef(false);
 
   const handleNavigateToInfo = useCallback((behavior: ScrollBehavior) => {
     const swiper = swiperRef.current;
@@ -56,10 +57,19 @@ function App() {
     swiper.mousewheel.enable();
   }, []);
 
+  const handleNavigateToTop = useCallback(() => {
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    isLandingUnlockedRef.current = true;
+    swiper.slideTo(0, 900);
+    swiper.mousewheel.enable();
+  }, []);
+
   const handleSwiperReady = useCallback((swiper: SwiperInstance) => {
     swiperRef.current = swiper;
 
-    if (swiper.activeIndex === 0) {
+    if (swiper.activeIndex === 0 && !isLandingUnlockedRef.current) {
       swiper.mousewheel.disable();
       return;
     }
@@ -70,7 +80,7 @@ function App() {
   const handleSlideChange = useCallback((swiper: SwiperInstance) => {
     storeSectionIndex(swiper.activeIndex);
 
-    if (swiper.activeIndex === 0) {
+    if (swiper.activeIndex === 0 && !isLandingUnlockedRef.current) {
       swiper.mousewheel.disable();
       return;
     }
@@ -124,7 +134,7 @@ function App() {
           <PersonalProject />
         </SwiperSlide>
         <SwiperSlide className="portfolio__slide">
-          <Contact />
+          <Contact onNavigateToTop={handleNavigateToTop} />
         </SwiperSlide>
       </Swiper>
     </main>

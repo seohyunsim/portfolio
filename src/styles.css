@@ -268,7 +268,8 @@ h2 {
 }
 
 .contact-section--visible .contact-dock {
-  animation: contactDockAppear 0.9s cubic-bezier(0.2, 0.88, 0.28, 1.08) 0.35s forwards;
+  animation: contactDockAppear 0.9s cubic-bezier(0.2, 0.88, 0.28, 1.08) 0.35s
+    forwards;
 }
 
 .contact-dock__image {
@@ -299,10 +300,18 @@ h2 {
   background: rgba(255, 255, 255, 0.16);
 }
 
-.contact-dock__action--phone { left: 10%; }
-.contact-dock__action--email { left: 28.5%; }
-.contact-dock__action--linkedin { left: 47%; }
-.contact-dock__action--github { left: 65.6%; }
+.contact-dock__action--phone {
+  left: 10%;
+}
+.contact-dock__action--email {
+  left: 28.5%;
+}
+.contact-dock__action--linkedin {
+  left: 47%;
+}
+.contact-dock__action--github {
+  left: 65.6%;
+}
 
 .contact-dock__tooltip {
   position: absolute;
@@ -330,6 +339,46 @@ h2 {
   border-left: 6px solid transparent;
   content: "";
   transform: translateX(-50%);
+}
+
+.contact-top-button.scroll-to-top {
+  right: clamp(18px, 2.5vw, 42px) !important;
+  bottom: clamp(18px, 3.5vh, 38px) !important;
+  display: grid;
+  width: clamp(54px, 5vw, 74px) !important;
+  height: clamp(54px, 5vw, 74px) !important;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(2, 3, 31, 0.14) !important;
+  border-radius: 18px !important;
+  color: #02031f;
+  background: rgba(255, 220, 235, 0.92) !important;
+  box-shadow: 0 12px 28px rgba(12, 38, 75, 0.24) !important;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.contact-top-button.scroll-to-top:hover,
+.contact-top-button.scroll-to-top:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(12, 38, 75, 0.3) !important;
+}
+
+.contact-top-button__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.12em;
+  font-family: "Aggravo", "NanumSquare", sans-serif;
+  font-size: clamp(10px, 0.82vw, 14px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.contact-top-button__content > span:first-child {
+  font-size: 1.25em;
 }
 
 .timeline-section {
@@ -1575,7 +1624,8 @@ h2 {
 }
 
 .personal-project--visible .personal-project__title {
-  animation: careerTitleMove 1.05s cubic-bezier(0.16, 0.82, 0.22, 1) 0.18s forwards;
+  animation: careerTitleMove 1.05s cubic-bezier(0.16, 0.82, 0.22, 1) 0.18s
+    forwards;
 }
 
 .personal-project--visible .personal-project__title-content {
@@ -1583,7 +1633,8 @@ h2 {
 }
 
 .personal-project--visible .personal-project__detail {
-  animation: careerDetailGrow 0.9s cubic-bezier(0.16, 0.82, 0.22, 1.08) 0.68s forwards;
+  animation: careerDetailGrow 0.9s cubic-bezier(0.16, 0.82, 0.22, 1.08) 0.68s
+    forwards;
 }
 
 .personal-project--visible .personal-project__content {
