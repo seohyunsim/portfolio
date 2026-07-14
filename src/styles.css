@@ -1411,6 +1411,97 @@ h2 {
   animation-delay: 1.36s;
 }
 
+.personal-project__title-content,
+.personal-project__content {
+  opacity: 0;
+}
+
+.personal-project__detail {
+  top: 7.5%;
+  left: 7%;
+}
+
+.personal-project__content {
+  display: flex;
+  flex-direction: column;
+  padding: 4.2% 5.5% 5%;
+}
+
+.personal-project__item {
+  padding: 0 0 2.4%;
+}
+
+.personal-project__item + .personal-project__item {
+  padding-top: 2.4%;
+  border-top: 1px solid rgba(2, 3, 31, 0.18);
+}
+
+.personal-project__item:last-child {
+  padding-bottom: 0;
+}
+
+.personal-project__item-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.personal-project__item h3 {
+  margin: 0;
+  font-family: "Aggravo", "NanumSquare", sans-serif;
+  font-size: clamp(11px, 1.05vw, 20px);
+  line-height: 1.2;
+}
+
+.personal-project__item time {
+  flex: 0 0 auto;
+  color: rgba(2, 3, 31, 0.58);
+  font-size: clamp(8px, 0.72vw, 13px);
+  font-weight: 700;
+}
+
+.personal-project__achievement,
+.personal-project__stack,
+.personal-project__description {
+  display: block;
+  margin: 0.45em 0 0;
+  font-size: clamp(8px, 0.76vw, 14px);
+  line-height: 1.38;
+  word-break: keep-all;
+}
+
+.personal-project__achievement {
+  color: #b82d67;
+  font-weight: 800;
+}
+
+.personal-project__stack {
+  color: rgba(2, 3, 31, 0.62);
+  font-size: clamp(7.5px, 0.68vw, 12.5px);
+  font-weight: 700;
+}
+
+.personal-project__description {
+  font-weight: 600;
+}
+
+.personal-project--visible .personal-project__title {
+  animation: careerTitleMove 1.05s cubic-bezier(0.16, 0.82, 0.22, 1) 0.18s forwards;
+}
+
+.personal-project--visible .personal-project__title-content {
+  animation: careerTextIn 0.5s ease 0.7s forwards;
+}
+
+.personal-project--visible .personal-project__detail {
+  animation: careerDetailGrow 0.9s cubic-bezier(0.16, 0.82, 0.22, 1.08) 0.68s forwards;
+}
+
+.personal-project--visible .personal-project__content {
+  animation: careerTextIn 0.45s ease 1.15s forwards;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -65,14 +65,21 @@ function CareerProject03() {
               <p className="career-project03__meta">
                 {project.period} · {project.role}
               </p>
-              <ul className="found-tech-stack career-project03__stack" aria-label="기술 스택">
+              <ul
+                className="found-tech-stack career-project03__stack"
+                aria-label="기술 스택"
+              >
                 {project.techStack.map((technology) => (
                   <li className="found-tech-stack__item" key={technology.name}>
                     <Tooltip label={technology.name}>
                       <Icon
                         className="found-tech-stack__icon"
                         icon={technology.icon}
-                        style={technology.color ? { color: technology.color } : undefined}
+                        style={
+                          technology.color
+                            ? { color: technology.color }
+                            : undefined
+                        }
                         aria-hidden="true"
                       />
                     </Tooltip>
