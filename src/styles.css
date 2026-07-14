@@ -244,6 +244,94 @@ h2 {
     forwards;
 }
 
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section__title {
+  width: max-content;
+  max-width: none;
+  font-size: clamp(82px, 14.5vw, 174px);
+}
+
+.contact-dock {
+  position: absolute;
+  z-index: 6;
+  bottom: clamp(22px, 4vh, 48px);
+  left: 50%;
+  width: min(556.92px, 68.544vw);
+  aspect-ratio: 1224 / 212;
+  filter: drop-shadow(0 18px 28px rgba(12, 38, 75, 0.28));
+  opacity: 0;
+  transform: translate(-50%, 120%);
+}
+
+.contact-section--visible .contact-dock {
+  animation: contactDockAppear 0.9s cubic-bezier(0.2, 0.88, 0.28, 1.08) 0.35s forwards;
+}
+
+.contact-dock__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact-dock__action {
+  position: absolute;
+  z-index: 1;
+  top: 14.5%;
+  width: 12.5%;
+  height: 72.5%;
+  padding: 0;
+  border: 0;
+  border-radius: 22%;
+  outline-offset: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.contact-dock__action:hover,
+.contact-dock__action:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.contact-dock__action--phone { left: 10%; }
+.contact-dock__action--email { left: 28.5%; }
+.contact-dock__action--linkedin { left: 47%; }
+.contact-dock__action--github { left: 65.6%; }
+
+.contact-dock__tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  padding: 0.48em 0.7em;
+  border-radius: 7px;
+  color: #fff;
+  background: #02031f;
+  box-shadow: 0 6px 16px rgba(2, 3, 31, 0.24);
+  font-size: clamp(11px, 1vw, 15px);
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.contact-dock__tooltip::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-top: 6px solid #02031f;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  transform: translateX(-50%);
+}
+
 .timeline-section {
   position: relative;
   isolation: isolate;
@@ -1554,6 +1642,13 @@ h2 {
   }
 }
 
+@keyframes contactDockAppear {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 @keyframes cursorMoveToNotification {
   0% {
     opacity: 0;
@@ -1723,6 +1818,20 @@ h2 {
   .folder-card__title {
     width: 118%;
     font-size: clamp(69px, 25.5vw, 117px);
+  }
+
+  .contact-section__title {
+    width: max-content;
+    font-size: clamp(62px, 20vw, 94px);
+  }
+
+  .contact-dock {
+    bottom: max(20px, 4vh);
+    width: min(556.92px, 68.544vw);
+  }
+
+  .contact-dock__action {
+    outline-offset: 2px;
   }
 
   .timeline-section {

@@ -6,13 +6,14 @@ import Career from "./components/Career";
 import CareerProject01 from "./components/CareerProject01";
 import CareerProject02 from "./components/CareerProject02";
 import CareerProject03 from "./components/CareerProject03";
+import Contact from "./components/Contact";
 import Found from "./components/Found";
 import Info from "./components/Info";
 import Landing from "./components/Landing";
 import PersonalProject from "./components/PersonalProject";
 
 const ACTIVE_SECTION_STORAGE_KEY = "portfolio-active-section";
-const SECTION_COUNT = 8;
+const SECTION_COUNT = 9;
 
 function getStoredSectionIndex() {
   try {
@@ -121,6 +122,9 @@ function App() {
         </SwiperSlide>
         <SwiperSlide className="portfolio__slide">
           <PersonalProject />
+        </SwiperSlide>
+        <SwiperSlide className="portfolio__slide">
+          <Contact />
         </SwiperSlide>
       </Swiper>
     </main>
