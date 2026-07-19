@@ -21,7 +21,7 @@ const representativeTechStack = [
 
 const timeline = [
   {
-    period: "2026.01",
+    period: "2026.04",
     company: "PERSONAL BODY",
     role: "창업, 기획 · 디자인 · 개발 전반 책임, UI/UX/FE Engineer",
   },
