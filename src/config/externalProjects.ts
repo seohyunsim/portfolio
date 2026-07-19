@@ -45,7 +45,7 @@ const externalProjectsConfig: unknown = [
       { name: "Storybook", icon: "logos:storybook-icon" },
     ],
     points: [
-      "응답 Text·Emotion을 Hash Table로 매핑해 감정에 반응하는 Kinetic Typography UI를 설계했습니다.",
+      "Alexa 응답 Text·Emotion을 Hash Table로 매핑하고 Resolver 패턴으로 28개 감정을 모션·컬러에 연결한 Kinetic Typography UI를 설계했습니다.",
       "20여 개 속성의 직관적인 커스터마이징과 CSV 테마 저장·불러오기로 전 연령대의 접근성을 개선했습니다.",
       "반복 작업을 30–40초에서 5초 이내로 줄여 약 85% 단축하고 기획부터 구현까지 전 과정을 수행했습니다.",
     ],

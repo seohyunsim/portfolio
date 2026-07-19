@@ -341,8 +341,13 @@ h2 {
   transform: translateX(-50%);
 }
 
-.contact-top-button.scroll-to-top {
-  position: absolute !important;
+.top-button--hidden.scroll-to-top {
+  display: none !important;
+}
+
+.top-button.scroll-to-top {
+  position: fixed !important;
+  z-index: 20;
   right: clamp(18px, 2.5vw, 42px) !important;
   bottom: clamp(18px, 3.5vh, 38px) !important;
   display: grid;
@@ -361,13 +366,13 @@ h2 {
     box-shadow 160ms ease;
 }
 
-.contact-top-button.scroll-to-top:hover,
-.contact-top-button.scroll-to-top:focus-visible {
+.top-button.scroll-to-top:hover,
+.top-button.scroll-to-top:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgba(12, 38, 75, 0.3) !important;
 }
 
-.contact-top-button__content {
+.top-button__content {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -378,7 +383,7 @@ h2 {
   line-height: 1;
 }
 
-.contact-top-button__content > span:first-child {
+.top-button__content > span:first-child {
   font-size: 1.25em;
 }
 

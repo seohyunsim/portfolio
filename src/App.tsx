@@ -1,7 +1,8 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ScrollToTop from "react-scroll-to-top";
 import Career from "./components/Career";
 import CareerProject01 from "./components/CareerProject01";
 import CareerProject02 from "./components/CareerProject02";
@@ -40,11 +41,22 @@ function storeSectionIndex(index: number) {
   }
 }
 
+function clearStoredSectionIndex() {
+  try {
+    window.sessionStorage.removeItem(ACTIVE_SECTION_STORAGE_KEY);
+  } catch {
+    // The portfolio still works when browser storage is unavailable.
+  }
+}
+
 function App() {
   const infoRef = useRef<HTMLElement | null>(null);
   const swiperRef = useRef<SwiperInstance | null>(null);
   const initialSectionRef = useRef(getStoredSectionIndex());
   const isLandingUnlockedRef = useRef(false);
+  const [isOnLandingSection, setIsOnLandingSection] = useState(
+    initialSectionRef.current === 0,
+  );
 
   const handleNavigateToInfo = useCallback((behavior: ScrollBehavior) => {
     const swiper = swiperRef.current;
@@ -68,6 +80,7 @@ function App() {
 
   const handleSwiperReady = useCallback((swiper: SwiperInstance) => {
     swiperRef.current = swiper;
+    setIsOnLandingSection(swiper.activeIndex === 0);
 
     if (swiper.activeIndex === 0 && !isLandingUnlockedRef.current) {
       swiper.mousewheel.disable();
@@ -78,7 +91,13 @@ function App() {
   }, []);
 
   const handleSlideChange = useCallback((swiper: SwiperInstance) => {
-    storeSectionIndex(swiper.activeIndex);
+    if (swiper.activeIndex === SECTION_COUNT - 1) {
+      clearStoredSectionIndex();
+    } else {
+      storeSectionIndex(swiper.activeIndex);
+    }
+
+    setIsOnLandingSection(swiper.activeIndex === 0);
 
     if (swiper.activeIndex === 0 && !isLandingUnlockedRef.current) {
       swiper.mousewheel.disable();
@@ -134,9 +153,21 @@ function App() {
           <PersonalProject />
         </SwiperSlide>
         <SwiperSlide className="portfolio__slide">
-          <Contact onNavigateToTop={handleNavigateToTop} />
+          <Contact />
         </SwiperSlide>
       </Swiper>
+
+      <ScrollToTop
+        className={`top-button ${isOnLandingSection ? "top-button--hidden" : ""}`}
+        top={-1}
+        component={
+          <span className="top-button__content">
+            <span aria-hidden="true">↑</span>
+            <span>Top</span>
+          </span>
+        }
+        onClick={handleNavigateToTop}
+      />
     </main>
   );
 }

@@ -22,7 +22,7 @@ const backofficePlatformProjectConfig: unknown = {
     {
       label: "목적",
       content:
-        "사내 플랫폼별 접근 권한 및 PRETCOORD 멤버십 어드민 플랫폼을 총괄할 수 있는 백오피스 플랫폼",
+        "사내 플랫폼별 접근 권한 및 멤버십 어드민을 총괄 관리하는 백오피스 플랫폼",
     },
     {
       label: "핵심 역할",
@@ -63,13 +63,17 @@ const backofficePlatformProjectConfig: unknown = {
     {
       title: "성과",
       items: [
-        { content: "개발 비용 약 80% 절감, 신규 플랫폼 구축 속도 향상" },
         {
           content:
-            "중복 코드 제거율 3.5배 증가 → 플랫폼당 약 14,000줄 감소 효과",
+            "Turborepo로 5개 플랫폼의 개별 재설치 작업을 제거하고 업데이트 반영 프로세스 6단계 → 1단계(83%) 단축",
         },
         {
-          content: "빌드 캐시 전략으로 빌드 속도 90.2% 단축 (8분 → 47초)",
+          content:
+            "Thymeleaf SSR 로그인 UI를 전역 레이어·모듈화로 리팩터링해 QA 이슈 91건 → 22건(76%) 감소",
+        },
+        {
+          content:
+            "통합 어드민으로 조회·등록·수정·업로드·다운로드 권한을 메뉴 단위로 분리해 반복 운영 업무의 사용자 경험 개선",
         },
       ],
     },
