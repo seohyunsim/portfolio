@@ -64,7 +64,8 @@ function Found() {
                     className="found-tech-stack__icon"
                     icon={technology.icon}
                     style={
-                      "color" in technology
+                      "color" in technology &&
+                      typeof technology.color === "string"
                         ? { color: technology.color }
                         : undefined
                     }
