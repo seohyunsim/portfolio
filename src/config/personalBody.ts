@@ -1,3 +1,5 @@
+import { assetPath } from "../utils/assetPath";
+
 export const personalBodyProject = {
   title: "PERSONAL BODY(퍼스널바디)",
   role: "기획 · 디자인 · 개발 전반 책임, UI/UX/FE Engineer",
@@ -92,12 +94,12 @@ export const personalBodyProject = {
   showcases: [
     {
       id: "b2b",
-      src: "/image/personal_body/b2b_captcha.png",
+      src: assetPath("image/personal_body/b2b_captcha.png"),
       alt: "퍼스널바디 B2B 서비스 화면 모음",
     },
     {
       id: "b2c",
-      src: "/image/personal_body/b2c_captcha.png",
+      src: assetPath("image/personal_body/b2c_captcha.png"),
       alt: "퍼스널바디 B2C 서비스 화면 모음",
     },
   ],

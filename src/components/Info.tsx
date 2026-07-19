@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { useEffect, useState, type RefObject } from "react";
 import SectionDock from "./SectionDock";
 import Tooltip from "./Tooltip";
+import { assetPath } from "../utils/assetPath";
 
 const representativeTechStack = [
   { name: "TypeScript", icon: "logos:typescript-icon" },
@@ -80,7 +81,7 @@ function Info({ sectionRef }: InfoProps) {
         <article className="browser-window browser-window--who">
           <img
             className="browser-window__frame"
-            src="/image/browser_3x2_v2.png"
+            src={assetPath("image/browser_3x2_v2.png")}
             alt=""
             width="1284"
             height="780"
@@ -96,7 +97,7 @@ function Info({ sectionRef }: InfoProps) {
         <article className="browser-window browser-window--profile">
           <img
             className="browser-window__frame"
-            src="/image/browser_2x3.png"
+            src={assetPath("image/browser_2x3.png")}
             alt=""
             width="912"
             height="1170"
@@ -105,7 +106,7 @@ function Info({ sectionRef }: InfoProps) {
           <div className="browser-window__content browser-window__content--profile">
             <img
               className="browser-window__profile"
-              src="/image/profile_v2.png"
+              src={assetPath("image/profile_v2.png")}
               alt="심서현 프로필 일러스트"
               width="678"
               height="1344"
@@ -117,7 +118,7 @@ function Info({ sectionRef }: InfoProps) {
         <article className="browser-window browser-window--timeline">
           <img
             className="browser-window__frame"
-            src="/image/browser_1x1.png"
+            src={assetPath("image/browser_1x1.png")}
             alt=""
             width="948"
             height="931"
@@ -155,7 +156,7 @@ function Info({ sectionRef }: InfoProps) {
         <article className="browser-window browser-window--tech-stack">
           <img
             className="browser-window__frame"
-            src="/image/browser_3x2_v2.png"
+            src={assetPath("image/browser_3x2_v2.png")}
             alt=""
             width="1284"
             height="780"

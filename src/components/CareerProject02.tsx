@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { useEffect, useRef, useState } from "react";
 import { backofficePlatformProject } from "../config/backofficePlatform";
 import Tooltip from "./Tooltip";
+import { assetPath } from "../utils/assetPath";
 
 function CareerProject02() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -32,7 +33,7 @@ function CareerProject02() {
       aria-label="사내 백오피스 플랫폼 개발 프로젝트"
     >
       <article className="career-project-title career-project-title--02">
-        <img src="/image/browser_3x2_v2.png" alt="" draggable="false" />
+        <img src={assetPath("image/browser_3x2_v2.png")} alt="" draggable="false" />
         <div className="career-project-title__content career-project-title__content--02">
           <span className="career-project-title__label">02</span>
           <h2>{backofficePlatformProject.title}</h2>
@@ -56,14 +57,14 @@ function CareerProject02() {
         </div>
         <img
           className="career-project-title__gif career-project-title__gif--02"
-          src="/gif/coding_guy_heart.gif"
+          src={assetPath("gif/coding_guy_heart.gif")}
           alt="하트와 함께 코딩하는 캐릭터 애니메이션"
           draggable="false"
         />
       </article>
 
       <article className="career-project-detail career-project-detail--02">
-        <img src="/image/browser_1x1.png" alt="" draggable="false" />
+        <img src={assetPath("image/browser_1x1.png")} alt="" draggable="false" />
         <div className="career-project-detail__content career-project-detail__content--02">
           <dl className="found-detail__overview">
             {backofficePlatformProject.overview.map((item) => (

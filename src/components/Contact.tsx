@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ScrollToTop from "react-scroll-to-top";
+import { assetPath } from "../utils/assetPath";
 
 type CopiedContact = "phone" | "email" | null;
 
@@ -142,7 +143,7 @@ function Contact({ onNavigateToTop }: ContactProps) {
       <div className="folder-card">
         <img
           className="folder-card__image"
-          src="/image/file.png"
+          src={assetPath("image/file.png")}
           alt=""
           width="470"
           height="395"
@@ -156,7 +157,7 @@ function Contact({ onNavigateToTop }: ContactProps) {
       <footer className="contact-dock" aria-label="연락처 및 외부 링크">
         <img
           className="contact-dock__image"
-          src="/image/contact_dock_bar.png"
+          src={assetPath("image/contact_dock_bar.png")}
           alt=""
           width="1224"
           height="212"

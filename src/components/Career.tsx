@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { careerCards, careerSummary } from "../config/career";
 import SectionDock from "./SectionDock";
+import { assetPath } from "../utils/assetPath";
 
 function Career() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -40,7 +41,7 @@ function Career() {
       <article className="career-browser career-browser--title">
         <img
           className="career-browser__frame"
-          src="/image/browser_3x2_v2.png"
+          src={assetPath("image/browser_3x2_v2.png")}
           alt=""
           width="1284"
           height="780"
@@ -62,7 +63,7 @@ function Career() {
           >
             <img
               className="career-browser__frame"
-              src="/image/browser_2x3.png"
+              src={assetPath("image/browser_2x3.png")}
               alt=""
               width="912"
               height="1170"

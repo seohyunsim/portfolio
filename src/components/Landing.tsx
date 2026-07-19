@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import SectionDock from "./SectionDock";
+import { assetPath } from "../utils/assetPath";
 
 type CursorPosition = CSSProperties & {
   "--cursor-start-x": string;
@@ -154,7 +155,7 @@ function Landing({ onNavigateToInfo }: LandingProps) {
       <div className="folder-card">
         <img
           className="folder-card__image"
-          src="/image/file.png"
+          src={assetPath("image/file.png")}
           alt=""
           width="470"
           height="395"
@@ -174,7 +175,7 @@ function Landing({ onNavigateToInfo }: LandingProps) {
       {cursorPosition && (
         <img
           className="scroll-cursor"
-          src="/image/cursor.png"
+          src={assetPath("image/cursor.png")}
           alt=""
           width="512"
           height="512"

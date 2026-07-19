@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { personalBodyProject } from "../config/personalBody";
 import SectionDock from "./SectionDock";
 import Tooltip from "./Tooltip";
+import { assetPath } from "../utils/assetPath";
 
 function Found() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -42,7 +43,7 @@ function Found() {
       <article className="found-browser found-browser--summary">
         <img
           className="found-browser__frame"
-          src="/image/browser_3x2_v2.png"
+          src={assetPath("image/browser_3x2_v2.png")}
           alt=""
           width="1284"
           height="780"
@@ -79,7 +80,7 @@ function Found() {
       <article className="found-browser found-browser--detail">
         <img
           className="found-browser__frame"
-          src="/image/browser_1x1.png"
+          src={assetPath("image/browser_1x1.png")}
           alt=""
           width="948"
           height="931"

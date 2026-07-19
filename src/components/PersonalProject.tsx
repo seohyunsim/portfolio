@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { personalProjects } from "../config/personalProjects";
+import { assetPath } from "../utils/assetPath";
 
 function PersonalProject() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -30,14 +31,14 @@ function PersonalProject() {
       aria-label="개인 프로젝트"
     >
       <article className="career-project-title personal-project__title">
-        <img src="/image/browser_3x2_v2.png" alt="" draggable="false" />
+        <img src={assetPath("image/browser_3x2_v2.png")} alt="" draggable="false" />
         <div className="career-project-title__content personal-project__title-content">
           <h2>개인 프로젝트</h2>
         </div>
       </article>
 
       <article className="career-project-detail personal-project__detail">
-        <img src="/image/browser_1x1.png" alt="" draggable="false" />
+        <img src={assetPath("image/browser_1x1.png")} alt="" draggable="false" />
         <div className="career-project-detail__content personal-project__content">
           {personalProjects.map((project) => (
             <article className="personal-project__item" key={project.title}>

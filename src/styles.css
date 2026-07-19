@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "BlobyCrash";
-  src: url("/font/Bloby_Crash_Personal_Use_Only.otf") format("opentype");
+  src: url("../public/font/Bloby_Crash_Personal_Use_Only.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -45,8 +45,8 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background: url("/image/background_pixel_v4.png") center / cover fixed
-    no-repeat;
+  background: url("../public/image/background_pixel_v4.png") center / cover
+    fixed no-repeat;
 }
 
 body::selection {

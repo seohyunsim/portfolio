@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { careerCards, careerSummary } from "../config/career";
 import { designSystemProject } from "../config/designSystem";
 import Tooltip from "./Tooltip";
+import { assetPath } from "../utils/assetPath";
 
 function CareerProject01() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -33,7 +34,7 @@ function CareerProject01() {
       aria-label="사내 디자인 시스템 구축 및 유지보수 프로젝트"
     >
       <article className="career-project-title">
-        <img src="/image/browser_3x2_v2.png" alt="" draggable="false" />
+        <img src={assetPath("image/browser_3x2_v2.png")} alt="" draggable="false" />
         <div className="career-project-title__content career-project-title__content--before">
           <span className="career-browser__eyebrow">경력</span>
           <h2>{careerSummary.company}</h2>
@@ -61,7 +62,7 @@ function CareerProject01() {
         </div>
         <img
           className="career-project-title__gif"
-          src="/gif/coding_guy.gif"
+          src={assetPath("gif/coding_guy.gif")}
           alt="코딩하는 캐릭터 애니메이션"
           width="269"
           height="350"
@@ -72,7 +73,7 @@ function CareerProject01() {
       <div className="career-project-ghosts" aria-hidden="true">
         {careerCards.map((card, index) => (
           <article className={`career-project-ghost career-project-ghost--${index + 1}`} key={card.title}>
-            <img src="/image/browser_2x3.png" alt="" draggable="false" />
+            <img src={assetPath("image/browser_2x3.png")} alt="" draggable="false" />
             <div className="career-card__content">
               <span className="career-card__number">{String(index + 1).padStart(2, "0")}</span>
               <h3>{card.title}</h3>
@@ -82,7 +83,7 @@ function CareerProject01() {
       </div>
 
       <article className="career-project-detail">
-        <img src="/image/browser_1x1.png" alt="" draggable="false" />
+        <img src={assetPath("image/browser_1x1.png")} alt="" draggable="false" />
         <div className="career-project-detail__content">
           <dl className="found-detail__overview">
             {designSystemProject.overview.map((item) => (

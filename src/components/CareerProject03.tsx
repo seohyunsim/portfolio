@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { useEffect, useRef, useState } from "react";
 import { externalProjects } from "../config/externalProjects";
 import Tooltip from "./Tooltip";
+import { assetPath } from "../utils/assetPath";
 
 function CareerProject03() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -34,7 +35,7 @@ function CareerProject03() {
       <article className="career-browser career-browser--title career-project03__title">
         <img
           className="career-browser__frame"
-          src="/image/browser_3x2_v2.png"
+          src={assetPath("image/browser_3x2_v2.png")}
           alt=""
           draggable="false"
         />
@@ -53,7 +54,7 @@ function CareerProject03() {
           >
             <img
               className="career-browser__frame"
-              src="/image/browser_2x3.png"
+              src={assetPath("image/browser_2x3.png")}
               alt=""
               draggable="false"
             />

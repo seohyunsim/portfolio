@@ -1,4 +1,5 @@
 import type { RefObject } from "react";
+import { assetPath } from "../utils/assetPath";
 
 type SectionDockProps = {
   animated?: boolean;
@@ -18,7 +19,7 @@ function SectionDock({
     >
       <img
         className="section-dock__image"
-        src="/image/dock_bar.png"
+        src={assetPath("image/dock_bar.png")}
         alt=""
         width="1536"
         height="1024"
